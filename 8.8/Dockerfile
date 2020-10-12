@@ -8,7 +8,7 @@ RUN apt-get update \
 
 # install Composer globally
 RUN curl -sS https://getcomposer.org/installer | php \
-  && mv composer.phar /usr/local/bin/composer
+  && mv composer.phar /usr/local/bin/composer && COMPOSER_MEMORY_LIMIT=-1 && export COMPOSER_MEMORY_LIMIT
 
 # install Drupal Commerce 2.x https://docs.drupalcommerce.org/commerce2/developer-guide/install-update/installation
 RUN  cd /var \
